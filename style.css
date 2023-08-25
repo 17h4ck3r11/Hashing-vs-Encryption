@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Ubuntu:wght@300&display=swap');
+
+:root {
+    --bg-color: linear-gradient(to bottom left, #05396B, #062746, #030c14, black);
+    --text-color: whitesmoke;
+}
+
+* {
+    margin: 0;
+    padding: 0%;
+    color: var(--text-color);
+    font-family: Arial;
+    padding: 0.5%;
+    letter-spacing: 2px;
+    line-height: 25px;
+}
+
+*::selection {
+    color:#05396B;
+    background: white;
+}
+
+body {
+    margin: 2.5%;
+    background-image: var(--bg-color);
+    overflow-x: hidden;
+}
+
+@media only screen and (max-width: 800px) {
+	h3 {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+}
+
+h3 {
+    font-size: 40px;
+    line-height: 45px;
+    letter-spacing: 5px;
+    text-align: center;
+    margin: 5%;
+}
+
+div>.video {
+    width:"900px";
+    height:"700px";
+}
+
+.key-points, p {
+    margin: 2%;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+  
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+  
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+  
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+#cursor-blur {
+    height: 150px;
+    width: 150px;
+    background-color: rgba(0, 255, 255, 0.384);
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(80px);
+    z-index: 9;
+    transition: all linear 0.2s;
+}
+  
+.quote {
+    padding: 1.5%;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translatex(-100%);
+    transition: 1.5s all;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translatex(0);
+    transition: 1.5s all;
+}

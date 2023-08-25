@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashing vs Encryption</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Asset/icon.png" type="image/x-icon">:
+</head>
+
+<body>
+    <div class="container">
+
+        <div id="cursor-blur"></div>
+
+        <div class="video" style="width: 70%; height: 500px;">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Sre8D9X1BzE?si=SLX6IANfrkYpAJ_n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <div class="hidden">
+            <h3><span class="quote"><i class="fa-solid fa-quote-left"></i></span class="quote">Hashing and encryption are both techniques used in the field of computer security, but they serve different purposes and have distinct characteristics.<span class="quote"><i class="fa-solid fa-quote-right"></i></span></h3>
+        </div>
+
+        <div class="hashing hidden">
+            <h1>
+                Hashing
+            </h1>
+            <div class="hidden">
+                <p>Hashing is a one-way function that takes an input (message or data) and produces a fixed-size string of characters, which is usually a hash value or hash code. The primary purpose of hashing is to create a digital fingerprint or checksum of data. Hash functions are designed in such a way that even a small change in the input data will result in a significantly different hash output. This property is known as the "avalanche effect."</p>
+            </div>
+            <div class="key-points hidden">
+                Key points about hashing:
+                <ol>
+                    <li>One-Way: Hash functions are designed to be irreversible, meaning that it is computationally infeasible to retrieve the original input from the hash output.</li>
+                    <li>Fixed Size: Hash functions always produce output of a fixed size, regardless of the size of the input.
+                    <li>Deterministic: Given the same input, a hash function will always produce the same output.</li>
+                    <li>Collision Resistance: Hash functions strive to avoid collisions, where two different inputs produce the same hash output.</li>
+                    <li>Use Cases: Hashing is commonly used for data integrity verification (ensuring data hasn't been tampered with), password storage (storing hashed passwords instead of plain text), and creating digital signatures.</li>
+                </ol><br>
+                Common hash functions include MD5, SHA-1, SHA-256, and SHA-3. It's important to note that older hash functions like MD5 and SHA-1 are no longer considered secure due to vulnerabilities that have been discovered over time.
+            </div>
+        </div>
+
+        <div class="encryption hidden">
+            <h1>
+                Encryption
+            </h1>
+            <div class="hidden">
+                <p>
+                    Encryption is a process of converting plaintext (readable data) into ciphertext (encrypted data) using an algorithm and a key. The primary purpose of encryption is to secure data by making it unreadable to unauthorized parties. To decrypt the data and retrieve the original plaintext, a decryption process is applied using the appropriate decryption key.
+                </p>
+            </div>
+            <div class="key-points hidden">
+                Key points about encryption:
+                <ol>    
+                    <li>Two-Way: Unlike hashing, encryption is a reversible process. You can decrypt the ciphertext back into the original plaintext if you have the correct decryption key.</li>
+                    <li>Variable Size: Encrypted output can be of variable size, depending on the encryption algorithm used and the length of the input.</li>
+                    <li>Key Dependency: Encryption relies on encryption keys for both encryption and decryption processes.</li>
+                    <li>Confidentiality: Encryption is used to protect the confidentiality of data, ensuring that only authorized parties can access the original information.</li>
+                    <li>Use Cases: Encryption is used for securing data transmission (e.g., HTTPS for secure web communication), data storage (encrypting files or databases), and protecting sensitive information.</li>
+                </ol><br>
+                Common encryption algorithms include AES (Advanced Encryption Standard) for symmetric encryption and RSA or ECC for asymmetric encryption.
+            </div>
+        </div>
+
+    <div class="hidden">
+    <h3>
+        <span class="quote"><i class="fa-solid fa-quote-left"></i></span>In summary, hashing is primarily used for data verification and integrity, while encryption focuses on data confidentiality and protection. Both techniques are essential components of modern cybersecurity practices.<span class="quote"><i class="fa-solid fa-quote-right"></i></span>
+    </h3>
+</div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
