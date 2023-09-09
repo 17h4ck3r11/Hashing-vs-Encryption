@@ -6,30 +6,26 @@
     <title>Hashing vs Encryption</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="Asset/icon.png" type="image/x-icon">:
+    <link rel="shortcut icon" href="Asset/icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/secure-shield.png" type="image/x-icon">
 </head>
 
 <body>
+    <div id="cursor-blur"></div>
     <div class="container">
-
-        <div id="cursor-blur"></div>
-
-        <div class="video" style="width: 70%; height: 500px;">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Sre8D9X1BzE?si=SLX6IANfrkYpAJ_n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-
-        <div class="hidden">
+        <div class="hidden division">
             <h3><span class="quote"><i class="fa-solid fa-quote-left"></i></span class="quote">Hashing and encryption are both techniques used in the field of computer security, but they serve different purposes and have distinct characteristics.<span class="quote"><i class="fa-solid fa-quote-right"></i></span></h3>
         </div>
 
+        
         <div class="hashing hidden">
             <h1>
                 Hashing
             </h1>
-            <div class="hidden">
+            <div>
                 <p>Hashing is a one-way function that takes an input (message or data) and produces a fixed-size string of characters, which is usually a hash value or hash code. The primary purpose of hashing is to create a digital fingerprint or checksum of data. Hash functions are designed in such a way that even a small change in the input data will result in a significantly different hash output. This property is known as the "avalanche effect."</p>
             </div>
-            <div class="key-points hidden">
+            <div class="key-points">
                 Key points about hashing:
                 <ol>
                     <li>One-Way: Hash functions are designed to be irreversible, meaning that it is computationally infeasible to retrieve the original input from the hash output.</li>
@@ -37,8 +33,22 @@
                     <li>Deterministic: Given the same input, a hash function will always produce the same output.</li>
                     <li>Collision Resistance: Hash functions strive to avoid collisions, where two different inputs produce the same hash output.</li>
                     <li>Use Cases: Hashing is commonly used for data integrity verification (ensuring data hasn't been tampered with), password storage (storing hashed passwords instead of plain text), and creating digital signatures.</li>
-                </ol><br>
-                Common hash functions include MD5, SHA-1, SHA-256, and SHA-3. It's important to note that older hash functions like MD5 and SHA-1 are no longer considered secure due to vulnerabilities that have been discovered over time.
+                </ol>
+                <h2>Hash Tables</h2>
+                <ul>
+                    <li>A hash table stores key and value pairs in a list that is accessible through its index. Because key and value pairs are unlimited, the hash function will map the keys to the table size. A hash value then becomes the index for a specific element.</li>
+                    <li>
+                        A hash function generates new values according to a mathematical hashing algorithm, known as a hash value or simply a hash. To prevent the conversion of hash back into the original key, a good hash always uses a one-way hashing algorithm.</li>
+                </ul>
+                <img src="img/Hash-Table.jpg" alt="">
+        
+                <h2>Digital Signatures</h2>
+                <ul>
+                    <li>In addition to enabling rapid data retrieval, hashing helps encrypt and decrypt digital signatures used to authenticate message senders and receivers. In this scenario, a hash function transforms the digital signature before both the hashed value (known as a message digest) and the signature are sent in separate transmissions to the receiver.</li>
+                    <li>
+                    Upon receipt, the same hash function derives the message digest from the signature, which is then compared with the transmitted message digest to ensure both are the same. In a one-way hashing operation, the hash function indexes the original value or key and enables access to data associated with a specific value or key that is retrieved.</li>
+                </ul>
+                <img src="img/Digital-Signature.jpg" alt="">
             </div>
         </div>
 
@@ -46,12 +56,12 @@
             <h1>
                 Encryption
             </h1>
-            <div class="hidden">
+            <div class="">
                 <p>
                     Encryption is a process of converting plaintext (readable data) into ciphertext (encrypted data) using an algorithm and a key. The primary purpose of encryption is to secure data by making it unreadable to unauthorized parties. To decrypt the data and retrieve the original plaintext, a decryption process is applied using the appropriate decryption key.
                 </p>
             </div>
-            <div class="key-points hidden">
+            <div class="key-points">
                 Key points about encryption:
                 <ol>    
                     <li>Two-Way: Unlike hashing, encryption is a reversible process. You can decrypt the ciphertext back into the original plaintext if you have the correct decryption key.</li>
@@ -59,8 +69,22 @@
                     <li>Key Dependency: Encryption relies on encryption keys for both encryption and decryption processes.</li>
                     <li>Confidentiality: Encryption is used to protect the confidentiality of data, ensuring that only authorized parties can access the original information.</li>
                     <li>Use Cases: Encryption is used for securing data transmission (e.g., HTTPS for secure web communication), data storage (encrypting files or databases), and protecting sensitive information.</li>
-                </ol><br>
-                Common encryption algorithms include AES (Advanced Encryption Standard) for symmetric encryption and RSA or ECC for asymmetric encryption.
+                </ol>
+                <h2>Symmetric Encryption</h2>
+                <ul>
+                    <li>Symmetric encryption, also known as a shared key or private key algorithm, uses the same key for encryption and decryption. Symmetric key ciphers are considered less expensive to produce and do not take as much computing power to encrypt and decrypt, meaning there is less of delay in decoding the data.</li>
+                    <li>
+                    The drawback is that if an unauthorized person gets their hands on the key, they will be able to decrypt any messages and data sent between the parties. As such, the transfer of the shared key needs to be encrypted with a different cryptographic key, leading to a cycle of dependency.</li>
+                </ul>
+                <img src="img/Symmetric-Encryption.png" alt="">
+        
+                <h2>Asymmetric Encryption</h2>
+                <ul>
+                    <li>Asymmetric encryption, also known as public-key cryptography, uses two separate keys to encrypt and decrypt data. One is a public key shared among all parties for encryption. Anyone with the public key can then send an encrypted message, but only the holders of the second, private key can decrypt the message.</li>
+                    <li>
+                    Asymmetric encryption is considered more expensive to produce and takes more computing power to decrypt as the public encryption key is often large, between 1,024 and 2,048 bits. As such, asymmetric encryption is often not suited for large packets of data.</li>
+                </ul>
+                <img src="img/Asymmetric-Encryption.avif" alt="">
             </div>
         </div>
 

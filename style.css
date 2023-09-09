@@ -1,15 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Ubuntu:wght@300&display=swap');
 
-:root {
-    --bg-color: linear-gradient(to bottom left, #05396B, #062746, #030c14, black);
-    --text-color: whitesmoke;
-}
-
 * {
     margin: 0;
     padding: 0%;
-    color: var(--text-color);
+    color: rgb(251,255,255);
     font-family: Arial;
     padding: 0.5%;
     letter-spacing: 2px;
@@ -22,12 +17,17 @@
 }
 
 body {
+    background-image: linear-gradient(to right, #3A1F54, #2A2658, #223265);
     margin: 2.5%;
-    background-image: var(--bg-color);
     overflow-x: hidden;
 }
 
-@media only screen and (max-width: 800px) {
+.division {
+    height: 100vh;
+    margin-top: 4%;
+}
+
+@media (min-width:0px) and (max-width: 800px) {
 	h3 {
         font-size: 10px;
         letter-spacing: 2px;
@@ -41,8 +41,16 @@ body {
     width: 100%;
 }
 
-h1 {
+h1, h2 {
     font-family: 'Orbitron', sans-serif;
+}
+
+h2 {
+    margin-top: 5%;
+}
+
+.hashing, .encryption {
+    margin-bottom: 5%;
 }
 
 h3 {
@@ -51,6 +59,7 @@ h3 {
     letter-spacing: 5px;
     text-align: center;
     margin: 5%;
+    text-shadow: 0px 0px 10px white;
 }
 
 div>.video {
@@ -60,6 +69,16 @@ div>.video {
 
 .key-points, p {
     margin: 2%;
+    text-align: justify;
+}
+
+.key-points>ul {
+    padding-left: 2%;
+    width: 98%;
+}
+
+.key-points img {
+    width: 98%;
 }
 
 ::-webkit-scrollbar {
@@ -91,7 +110,7 @@ div>.video {
     border-radius: 50%;
     position: fixed;
     filter: blur(80px);
-    z-index: 9;
+    z-index: 9z;
     transition: all linear 0.2s;
 }
   
@@ -103,12 +122,12 @@ div>.video {
     opacity: 0;
     filter: blur(5px);
     transform: translatex(-100%);
-    transition: 1.5s all;
+    transition: 1.5s ease-in;
 }
 
 .show {
     opacity: 1;
     filter: blur(0);
     transform: translatex(0);
-    transition: 1.5s all;
+    transition: 1.5s ease-out;
 }
